@@ -1,2 +1,130 @@
-# Site_aggregation_effect_ERE
-Replication package for the paper: Site aggregation in recreational demand modeling with an application to the impact of sediments runoffs in coastal waters (2026))
+# Replication files for site aggregation in recreational demand modelling
+
+This repository contains the code used for the theoretical simulation and the
+empirical analysis in:
+
+*Site aggregation in recreational demand modelling with an application to the
+impact of sediments runoffs in coastal waters*
+
+The analysis compares recreation-demand estimates obtained from the complete
+set of Maui recreation sites with estimates obtained after combining all
+non-coastal sites into one Other Outdoor Recreation (OOR) alternative.
+
+## Contents
+
+- `code/01_data/` constructs the estimation and welfare datasets.
+- `code/02_estimation/` estimates the conditional-logit and two-stage models.
+- `code/03_bootstrap/` corrects two-stage uncertainty for the generated
+  first-stage fixed effects.
+- `code/04_welfare/` calculates welfare losses from brown water events.
+- `code/05_figures_tables/` creates the empirical tables and figures.
+- `code/06_monte_carlo/` runs and plots the site-aggregation simulation.
+- `logos/` contains the two map symbols used in Figure 3.
+- `data/` documents the separately archived data.
+- `output/` is populated when the scripts are run.
+
+
+## Software
+
+The reported models were estimated with:
+
+- R 4.4.2
+- Apollo 0.3.7
+
+The installed package versions used for the final project files were:
+
+- `openxlsx` 4.2.7.1
+- `tidyverse` 2.0.0
+- `MASS` 7.3-61
+- `sf` 1.0-21
+- `ggspatial` 1.1.9
+- `terra` 1.9-11
+- `ggimage` 0.3.3
+- `png` 0.1-8
+
+
+## Data
+
+The data are not stored on GitHub. Download the data archive described in
+[`data/README.md`](data/README.md), preserve its folder structure, and place
+its contents inside `data/`.
+
+
+## Execution order
+
+Run every script from the repository root.
+
+### Empirical analysis
+
+1. Prepare the estimation datasets:
+   `code/01_data/01_build_estimation_datasets.R`
+2. Prepare the population-by-site welfare dataset:
+   `code/01_data/02_build_welfare_dataset.R`
+3. Estimate the complete conditional-logit model:
+   `code/02_estimation/01_estimate_covariate_full.R`
+4. Estimate the aggregated conditional-logit model:
+   `code/02_estimation/02_estimate_covariate_aggregated.R`
+5. Estimate the complete first-stage fixed-effects model:
+   `code/02_estimation/03_estimate_FE_full.R`
+6. Estimate the aggregated first-stage fixed-effects model:
+   `code/02_estimation/04_estimate_FE_aggregated.R`
+7. Bootstrap the first-stage estimates in the two-stage model:
+   `code/03_bootstrap/01_bootstrap_2stage_murdock.R`
+8. Estimate the complete and aggregated second-stage regressions and apply
+   the bootstrap covariance correction:
+   `code/02_estimation/05_estimate_second_stage_models.R`
+9. Compile the estimates used in Table 1:
+   `code/02_estimation/06_compile_estimation_results.R`
+10. Inspect the welfare formulas and data preparation in
+    `code/04_welfare/01_welfare_calculations.R`, then calculate the welfare
+    estimates and Monte Carlo intervals with
+    `code/04_welfare/02_estimate_welfare.R`.
+11. Compile the annual welfare estimates used in Table 2:
+    `code/04_welfare/03_compile_welfare_table.R`
+12. Create the empirical figures and supporting tables using the scripts in
+    `code/05_figures_tables/`.
+
+The bootstrap uses 500 respondent-level outer draws and 1,000 site-level inner
+draw attempts for each outer draw. It is the most computationally intensive
+part of the empirical workflow (to have a reference point: it took around 4 hours using 12 cores). The script saves partial diagnostics and final
+covariance estimates in `output/bootstrap/two_stage_murdock/`.
+
+### Site-aggregation Monte Carlo
+
+The theoretical simulation is independent of the empirical-data workflow:
+
+1. Inspect `code/06_monte_carlo/01_generate_synthetic_choice_data.R` for the
+   data-generating process.
+2. Run `code/06_monte_carlo/02_run_monte_carlo_aggregation.R` to estimate the
+   27 scenarios with 1,000 replications per scenario.
+3. Run `code/06_monte_carlo/03_plot_monte_carlo_results.R` to create Figure 1.
+
+## Reproducibility notes
+
+- Random-number seeds are set in the Monte Carlo, bootstrap, and welfare
+  uncertainty calculations.
+- All file references are relative to the repository root.
+- The raw source data are never overwritten. Constructed datasets are written
+  to `data/processed/`.
+- Intermediate models and simulation draws can be large and are therefore
+  excluded from GitHub by `.gitignore`.
+- Each consequential merge checks its key and expected observation count.
+
+## Outputs corresponding to the paper
+
+- Figure 1: `figure1_average_bias_heatmap.png`
+- Figure 3: `figure3_recreation_sites_map.png`
+- Figure 4: `figure4_bwe_frequency_map.png`
+- Figure 5: `figure5_welfare_simulations.jpeg`
+- Table 1 source: `paper_model_estimates.xlsx`
+- Table 2 source: `paper_welfare_estimates.xlsx`
+
+Figure 2 is a photograph and is not generated by the analysis code (Thank you Don Mcleish!).
+
+## Output generation
+The analysis scripts create subfolders for model objects, bootstrap results,
+welfare simulations, tables, and figures. 
+
+## License and citation
+
+to be added

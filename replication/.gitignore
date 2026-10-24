@@ -1,0 +1,25 @@
+# Data are distributed separately and must not be committed.
+data/raw/*
+data/external/*
+data/processed/*
+data/metadata/*
+!data/raw/.gitkeep
+!data/external/.gitkeep
+!data/processed/.gitkeep
+!data/metadata/.gitkeep
+!data/README.md
+
+# Generated outputs and local R session files.
+output/*
+!output/.gitkeep
+!output/README.md
+.Rhistory
+.RData
+.Ruserdata
+
+# Temporary and operating-system files.
+*.tmp
+*.log
+~$*
+.DS_Store
+Thumbs.db
