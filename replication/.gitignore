@@ -14,6 +14,8 @@ data/metadata/*
 output/*
 !output/.gitkeep
 !output/README.md
+!output/reference_outputs/
+!output/reference_outputs/**
 .Rhistory
 .RData
 .Ruserdata
