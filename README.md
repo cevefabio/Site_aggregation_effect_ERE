@@ -31,23 +31,29 @@ The reported models were estimated with:
 - R 4.4.2
 - Apollo 0.3.7
 
-The installed package versions used for the final project files were:
-
-- `openxlsx` 4.2.7.1
-- `tidyverse` 2.0.0
-- `MASS` 7.3-61
-- `sf` 1.0-21
-- `ggspatial` 1.1.9
-- `terra` 1.9-11
-- `ggimage` 0.3.3
-- `png` 0.1-8
-
 
 ## Data
 
-The data are not stored on GitHub. Download the data archive described in
-[`data/README.md`](data/README.md), preserve its folder structure, and place
-its contents inside `data/`.
+Code and data are distributed separately:
+
+- **GitHub repository:** analysis code, documentation, and map symbols;
+- **Zenodo data archive:** all original data required by the analysis.
+
+The data files are not stored on GitHub. After cloning or downloading this
+repository, download `hawaii_bw_replication_data.zip` from the accompanying
+Zenodo record (**DOI to be added**) and extract it in the repository root. The
+archive already contains the top-level `data/` directory, so the resulting
+structure should include:
+
+```text
+data/raw/for_estimation_withbio.dat
+data/external/sites.xlsx
+data/external/BWevents.xlsx
+```
+
+The complete directory structure and data sources are documented in
+[`data/README.md`](data/README.md). File sizes and SHA-256 checksums are
+reported in [`data/DATA_INVENTORY.csv`](data/DATA_INVENTORY.csv).
 
 
 ## Execution order

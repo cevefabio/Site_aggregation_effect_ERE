@@ -8,6 +8,7 @@ data/metadata/*
 !data/processed/.gitkeep
 !data/metadata/.gitkeep
 !data/README.md
+!data/DATA_INVENTORY.csv
 
 # Generated outputs and local R session files.
 output/*

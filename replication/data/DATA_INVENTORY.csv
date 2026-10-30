@@ -1,0 +1,14 @@
+relative_path,description,dimensions_or_components,size_bytes,sha256
+data/raw/for_estimation_withbio.dat,Maui recreation survey and respondent-site estimation inputs,62481 rows x 84 columns,20090387,4f947601644001d0d7e45fca0fcd2548609ba29002ee2c5e300719eb9f2d54a3
+data/external/BWevents.xlsx,Brown water event dates duration and affected sites,112 rows x 6 columns,13044,02ee6cded1e97bd0d7b9f0b20ef4be3335a08c10a7a8d496a0f60fa807f0b97c
+data/external/coralPNAS.csv,Site-level coral cover from Asner et al. 2020,94 rows x 2 columns,1268,b1e1651f4d0142d7bb08ed014e93db4e1c0c88a5b1f693ea2335838f00d4a3f1
+data/external/grid_centroid_sites_routes3.csv,Routes distances and travel times between population cells and sites,365518 rows x 4 columns,12499279,6e7aa6d3f147a4d9ab9ace795b7f8fe6982d18138232600b89154e7753708ee2
+data/external/gridpop_zipcode3.xlsx,Population grid used to aggregate welfare,2042 rows x 9 columns,135893,ecd635d716937c4f9dbe9def226f2aee4267db2a0503a6efcc7f4bb225593cbf
+data/external/sites.xlsx,Complete recreation-site inventory including the home alternative,177 rows x 88 columns,69089,2109ca52cf7be73937d0398833e94ccac27222dc5972efc5a4b20ec4c860f34d
+data/external/sites_aggregated.xlsx,Site inventory with non-coastal sites aggregated into OOR,96 rows x 96 columns,50110,5c0b734661b8b893bc35e6fe6fe86f68b2059a0d47decd2edbc122f947f7b5a4
+data/external/mappe_GIS/hillmau.tif/hillmau.tif,Maui hillshade raster used in Figures 3 and 4,5025 rows x 7509 columns x 1 layer,75547756,3255c8bd051368f8d86baa01af61289d2fc489b41b0d2c5b1e83bb03dfd0787a
+data/external/mappe_GIS/uac15.shp/uac15.cpg,Character-encoding component of the urban-area shapefile,shapefile component,5,3ad3031f5503a4404af825262ee8232cc04d4ea6683d42c5dd0a2f2a27ac9824
+data/external/mappe_GIS/uac15.shp/uac15.dbf,Attribute-table component of the urban-area shapefile,23 features x 15 attributes,8081,48355c62aeb5fb0b116a490b5fb9c1e5dc4e1aa0844b8c4c55ea7cc3a6e1cea6
+data/external/mappe_GIS/uac15.shp/uac15.prj,Coordinate-reference component of the urban-area shapefile,shapefile component,439,2da599c14febabd67f73e230e3a3d9cdbd16f24b046d797812537ce0b1da53cb
+data/external/mappe_GIS/uac15.shp/uac15.shp,Geometry component of the urban-area shapefile,23 polygon features,960244,f8cd103d8cec704e92e6c51eea48c21c3c9647b95e7572e6805faba72e3bc4bc
+data/external/mappe_GIS/uac15.shp/uac15.shx,Index component of the urban-area shapefile,shapefile component,284,92bf393fa526c85a9ec40cd507ed61f6b798aec1facdca5d88c370ee965df476

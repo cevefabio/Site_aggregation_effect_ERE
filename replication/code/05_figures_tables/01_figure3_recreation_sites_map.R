@@ -20,8 +20,8 @@ urban_file <- file.path(
   "data", "external", "mappe_GIS", "uac15.shp", "uac15.shp"
 )
 site_file <- file.path("data", "external", "sites.xlsx")
-beach_icon_file <- file.path("assets", "beach_ppt.png")
-park_icon_file <- file.path("assets", "park_ppt.png")
+beach_icon_file <- file.path("logos", "beach_ppt.png")
+park_icon_file <- file.path("logos", "park_ppt.png")
 
 required_files <- c(
   elevation_file,

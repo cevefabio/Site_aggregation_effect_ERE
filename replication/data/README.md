@@ -1,34 +1,22 @@
-# Data archive and directory structure
+# Data
 
-The replication data are distributed separately from the GitHub repository.
-Preserve the directory structure below when extracting the archive.
+The data for this project are distributed as a separate Zenodo archive:
 
-## Archive information
+- Archive: `hawaii_bw_replication_data.zip`
+- Zenodo DOI: **TO BE ADDED**
 
-- Permanent archive: **TO BE ADDED**
-- DOI: **TO BE ADDED**
-- Version used for the paper: **TO BE ADDED**
-- Date accessed: **TO BE ADDED**
-- Access conditions: **TO BE ADDED**
-- Archive checksum: **TO BE ADDED**
+The archive contains the complete `data/` directory. Users should extract it
+in the root of the GitHub repository without changing its internal structure.
+The original inputs are kept separate from the datasets constructed by the
+code. File sizes and SHA-256 checksums are reported in `DATA_INVENTORY.csv`.
 
-A persistent, versioned archive such as Zenodo or OSF is preferable to a
-personal cloud-storage link.
+## Original survey data
 
-## Required original input
+`data/raw/for_estimation_withbio.dat` contains the Maui residents' recreation
+survey data used in Fezzi et al. (2023), including site visits, travel costs,
+and site characteristics matched to each respondent.
 
-Place the anonymized recreation-choice file here:
-
-```text
-data/raw/for_estimation_withbio.dat
-```
-
-Before public release, confirm that this file is consistent with participant
-consent, disclosure-control requirements, and any data-sharing agreement. A
-numeric respondent identifier is not, by itself, sufficient evidence that a
-dataset is safe to release.
-
-## Required external and site-level inputs
+## Site, environmental, and spatial data
 
 ```text
 data/external/BWevents.xlsx
@@ -45,13 +33,28 @@ data/external/mappe_GIS/uac15.shp/uac15.shp
 data/external/mappe_GIS/uac15.shp/uac15.shx
 ```
 
-The archival release should document the original provider, license, download
-URL, and any modifications for each external file.
+The main sources are:
+
+- Brown water event records: Clean Water Branch, Hawaiʻi Department of Health.
+- Recreation-site inventory: compiled for Fezzi et al. (2023) from travel
+  guides, the Hawaiʻi Statewide GIS Program, Google Maps, and AllTrails.
+- Coral cover: Asner et al. (2020).
+- Fish biomass and related coastal attributes: Costa and Kendall (2016).
+- Road network and geographic information: Hawaiʻi Statewide GIS Program;
+  travel speeds were validated using Google Maps.
+- Population grid: the gridded Maui population data used in Fezzi et al.
+  (2023) for welfare aggregation.
+- Urban-area and hillshade layers: geographic inputs used to construct
+  Figures 3 and 4.
+
+`sites_aggregated.xlsx` is the site inventory after combining non-coastal
+recreation sites into the Other Outdoor Recreation alternative. It is supplied
+as an input because it also fixes the alternative ordering used in estimation.
 
 ## Constructed data
 
-Do not place constructed files in the raw-data directory. The two scripts in
-`code/01_data/` create the following files in `data/processed/`:
+The two scripts in `code/01_data/` create the following files in
+`data/processed/`:
 
 ```text
 HW_wide_full_unadjusted.rds
@@ -65,13 +68,5 @@ The adjusted datasets assign one visit to each otherwise unchosen alternative,
 as required for estimation of the complete set of site fixed effects. The
 unadjusted datasets are retained for the respondent-level bootstrap.
 
-## Integrity information to add before release
-
-The final archive should include, for every file:
-
-- filename and relative path;
-- file size;
-- SHA-256 checksum;
-- number of observations and variables, where applicable;
-- stable identifiers and merge keys;
-- units for travel distance, travel time, population, and monetary variables.
+Do not place constructed files in `data/raw/` or `data/external/`; rerunning the
+preparation scripts should never overwrite the source data.
