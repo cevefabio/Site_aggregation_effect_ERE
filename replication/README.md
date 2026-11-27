@@ -57,10 +57,10 @@ packages before beginning the replication.
 
 Code and data are distributed separately. Download
 `hawaii_bw_replication_data.zip` from the
-[Zenodo record](https://doi.org/10.5281/zenodo.23811094) and extract it in the
-root of the GitHub repository. The archive already contains the top-level
-`data/` directory. After extraction, the repository should therefore contain,
-among other files:
+[Zenodo record](https://doi.org/10.5281/zenodo.23811094) and extract it into
+the `replication/` folder. The archive already contains `data/`, which should
+sit alongside `code/` inside `replication/`. Paths below are relative to
+`replication/`.
 
 ```text
 code/01_data/01_build_estimation_datasets.R
@@ -71,7 +71,7 @@ data/external/BWevents.xlsx
 
 Do not rename the folders or move individual data files. The scripts use
 project-relative paths, so no working-directory lines need to be edited. Start
-R in the repository root before running a script.
+R in `replication/` before running a script.
 
 The complete data structure and citations are in
 [`data/README.md`](data/README.md). File sizes and SHA-256 checksums are in
@@ -81,7 +81,7 @@ The complete data structure and citations are in
 
 ### Empirical analysis
 
-Run the following scripts in order from the repository root:
+Run the following scripts in order from `replication/`:
 
 1. `code/01_data/01_build_estimation_datasets.R`
 2. `code/01_data/02_build_welfare_dataset.R`

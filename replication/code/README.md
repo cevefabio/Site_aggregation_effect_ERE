@@ -1,6 +1,6 @@
 # Code guide
 
-Run scripts from the repository root and follow the order in the main README.
+Run scripts from `replication/` and follow the order in the main README.
 Settings and input paths appear near the top of each script. Economically
 meaningful transformations are kept in the analysis scripts so they can be
 followed sequentially.

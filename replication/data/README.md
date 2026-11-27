@@ -6,8 +6,8 @@ The data for this project are distributed in a separate archive:
 - Zenodo record: [https://doi.org/10.5281/zenodo.23811094](https://doi.org/10.5281/zenodo.23811094)
 - Replication code: [GitHub repository](https://github.com/cevefabio/Site_aggregation_effect_ERE/tree/main)
 
-The archive contains the complete `data/` directory. Extract it in the root of
-the code repository without changing its internal structure. Original inputs
+The archive contains the complete `data/` directory. Extract it into the
+repository's `replication/` folder so `data/` sits alongside `code/`. Original inputs
 are kept separate from datasets constructed by the code. File sizes and
 SHA-256 checksums are reported in `DATA_INVENTORY.csv`.
 
